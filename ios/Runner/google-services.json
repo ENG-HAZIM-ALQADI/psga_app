@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "775065999324",
+    "project_id": "psga-app-123",
+    "storage_bucket": "psga-app-123.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775065999324:android:ce9bb7656f0d78deabe119",
+        "android_client_info": {
+          "package_name": "com.example.psga_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775065999324-m9ne7sea6481qjuo2kfjtagfmceut33f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.psga_app",
+            "certificate_hash": "1b6ad0722c7c7d2c3eb9b281147a4ee96a9f3506"
+          }
+        },
+        {
+          "client_id": "775065999324-534kk1uhadtgq5eq9vhupdfh6d2atu2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6CyEwgXZJX3Z197-4TAYd3tXoB4bggYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775065999324-534kk1uhadtgq5eq9vhupdfh6d2atu2c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "775065999324-g50bbcvtvj13r27gu3m1cblk47eg3kbg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.psgaApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
