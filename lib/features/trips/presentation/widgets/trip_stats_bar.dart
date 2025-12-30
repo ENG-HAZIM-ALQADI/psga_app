@@ -27,7 +27,7 @@ class TripStatsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     /// 🎨 نسق الألوان
     final theme = Theme.of(context);
-    
+
     /// ⏱️ حساب الوقت المنقضي من بداية الرحلة إلى الآن
     /// DateTime.now().difference(): طرح وقتين للحصول على الفرق (Duration)
     final duration = DateTime.now().difference(trip.startTime);
@@ -82,14 +82,14 @@ class TripStatsBar extends StatelessWidget {
   /// كل إحصائية تتكون من: أيقونة + قيمة + وحدة + تسمية
   /// 💡 Reusable Component: نستخدمها 3 مرات للسرعة والمسافة والوقت
   Widget _buildStatItem(
-    BuildContext context, {
-    required IconData icon,     // 🎨 الأيقونة (مثل Icons.speed)
-    required String value,      // 📈 القيمة الرقمية (مثل "85")
-    required String unit,       // 📐 الوحدة (مثل "كم/س")
-    required String label,      // 🏷️ التسمية (مثل "السرعة")
-  }) {
+      BuildContext context, {
+        required IconData icon,     // 🎨 الأيقونة (مثل Icons.speed)
+        required String value,      // 📈 القيمة الرقمية (مثل "85")
+        required String unit,       // 📐 الوحدة (مثل "كم/س")
+        required String label,      // 🏷️ التسمية (مثل "السرعة")
+      }) {
     final theme = Theme.of(context);
-    
+
     /// 📦 Column: ترتيب رأسي (أيقونة فوق الرقم فوق التسمية)
     return Column(
       mainAxisSize: MainAxisSize.min,  // 📐 الارتفاع بالحد الأدنى

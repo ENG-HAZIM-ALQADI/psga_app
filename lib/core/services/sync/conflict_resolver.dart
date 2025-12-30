@@ -49,9 +49,9 @@ class ConflictResolver {
 
   /// دمج قائمتين من الكيانات مع حل التعارضات
   List<T> mergeList<T extends SyncableEntity>(
-    List<T> localList,
-    List<T> remoteList,
-  ) {
+      List<T> localList,
+      List<T> remoteList,
+      ) {
     try {
       debugPrint('⚠️ [Conflict] دمج القوائم...');
       debugPrint('⚠️ [Conflict] Local: ${localList.length} عنصر');
@@ -93,9 +93,9 @@ class ConflictResolver {
 
   /// دمج JSON objects
   Map<String, dynamic> mergeJson(
-    Map<String, dynamic> local,
-    Map<String, dynamic> remote,
-  ) {
+      Map<String, dynamic> local,
+      Map<String, dynamic> remote,
+      ) {
     try {
       final localUpdated = local['updatedAt'] as String?;
       final remoteUpdated = remote['updatedAt'] as String?;
@@ -133,10 +133,10 @@ class ConflictResolver {
 
   /// حل تعارض بناءً على استراتيجية معينة
   T resolveWithStrategy<T extends SyncableEntity>(
-    T local,
-    T remote, {
-    ConflictStrategy strategy = ConflictStrategy.lastWriteWins,
-  }) {
+      T local,
+      T remote, {
+        ConflictStrategy strategy = ConflictStrategy.lastWriteWins,
+      }) {
     switch (strategy) {
       case ConflictStrategy.lastWriteWins:
         return resolve(local, remote);
@@ -150,7 +150,7 @@ class ConflictResolver {
         return remote;
 
       case ConflictStrategy.merge:
-        // استراتيجية الدمج تحتاج تطبيق مخصص لكل نوع
+      // استراتيجية الدمج تحتاج تطبيق مخصص لكل نوع
         debugPrint('⚠️ [Conflict] استراتيجية: دمج (غير مطبق - استخدام lastWriteWins)');
         return resolve(local, remote);
     }
@@ -158,9 +158,9 @@ class ConflictResolver {
 
   /// إحصائيات التعارضات
   ConflictStats getConflictStats<T extends SyncableEntity>(
-    List<T> localList,
-    List<T> remoteList,
-  ) {
+      List<T> localList,
+      List<T> remoteList,
+      ) {
     int conflicts = 0;
     int localWins = 0;
     int remoteWins = 0;
@@ -197,9 +197,9 @@ class ConflictResolver {
 
   /// طباعة تقرير التعارضات
   void printConflictReport<T extends SyncableEntity>(
-    List<T> localList,
-    List<T> remoteList,
-  ) {
+      List<T> localList,
+      List<T> remoteList,
+      ) {
     final stats = getConflictStats(localList, remoteList);
 
     debugPrint('⚠️ [Conflict] ═══════════════════════════════════');

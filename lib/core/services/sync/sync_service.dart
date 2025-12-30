@@ -58,9 +58,9 @@ class SyncService {
     try {
       final box = Hive.box<SyncItem>(HiveBoxes.syncQueue);
       final items = box.values
-          .where((item) => 
-              item.status == SyncItemStatus.pending || 
-              item.status == SyncItemStatus.failed)
+          .where((item) =>
+      item.status == SyncItemStatus.pending ||
+          item.status == SyncItemStatus.failed)
           .toList();
 
       // ترتيب حسب وقت الإنشاء
@@ -232,14 +232,14 @@ class SyncService {
           .collection('routes')
           .where('userId', isEqualTo: userId)
           .get();
-      
+
       int routesCount = 0;
       if (routesSnapshot.docs.isNotEmpty) {
         final routesBox = Hive.box<RouteModel>(HiveBoxes.routes);
         for (var doc in routesSnapshot.docs) {
           try {
             final route = RouteModel.fromFirestore(doc.data(), doc.id);
-            
+
             // تحقق مما إذا كان المسار موجوداً بالفعل وبنفس البيانات لتجنب الكتابة المتكررة
             final existingRoute = routesBox.get(route.id);
             if (existingRoute == null || existingRoute.updatedAt != route.updatedAt) {
@@ -260,14 +260,14 @@ class SyncService {
           .collection('trips')
           .where('userId', isEqualTo: userId)
           .get();
-      
+
       int tripsCount = 0;
       if (tripsSnapshot.docs.isNotEmpty) {
         final tripsBox = Hive.box<TripModel>(HiveBoxes.trips);
         for (var doc in tripsSnapshot.docs) {
           try {
             final trip = TripModel.fromFirestore(doc.data(), doc.id);
-            
+
             // تحقق مما إذا كانت الرحلة موجودة بالفعل لتجنب الكتابة المتكررة
             final existingTrip = tripsBox.get(trip.id);
             if (existingTrip == null) {
@@ -288,14 +288,14 @@ class SyncService {
           .collection('contacts')
           .where('userId', isEqualTo: userId)
           .get();
-      
+
       int contactsCount = 0;
       if (contactsSnapshot.docs.isNotEmpty) {
         final contactsBox = Hive.box<ContactModel>(HiveBoxes.contacts);
         for (var doc in contactsSnapshot.docs) {
           try {
             final contact = ContactModel.fromFirestore(doc.data(), doc.id);
-            
+
             // تحقق مما إذا كانت جهة الاتصال موجودة بالفعل لتجنب الكتابة المتكررة
             final existingContact = contactsBox.get(contact.id);
             if (existingContact == null) {
@@ -333,21 +333,21 @@ class SyncService {
   void _notifyBlocsOfUpdates(String userId) {
     try {
       debugPrint('🔄 [Sync] 📢 إرسال إشعارات التحديث للـ BLoCs...');
-      
+
       // نستخدم sl.isRegistered للتحقق من وجود الـ BLoCs وتجنب الأخطاء
       if (sl.isRegistered<RouteBloc>()) {
         sl<RouteBloc>().add(LoadRoutes(userId));
       }
-      
+
       if (sl.isRegistered<TripBloc>()) {
         sl<TripBloc>().add(LoadTripHistory(userId: userId));
         sl<TripBloc>().add(LoadActiveTrip(userId));
       }
-      
+
       if (sl.isRegistered<ContactBloc>()) {
         sl<ContactBloc>().add(LoadContactsEvent(userId));
       }
-      
+
       debugPrint('🔄 [Sync] ✅ تم إرسال إشعارات التحديث');
     } catch (e) {
       debugPrint('🔄 [Sync] ⚠️ خطأ في إخطار الـ BLoCs: $e');

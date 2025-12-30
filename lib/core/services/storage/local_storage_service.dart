@@ -345,7 +345,7 @@ class LocalStorageService {
   Future<AlertConfigModel?> getAlertConfig(String userId) async {
     try {
       final config =
-          await get<AlertConfigModel>(HiveBoxes.alertConfigs, userId);
+      await get<AlertConfigModel>(HiveBoxes.alertConfigs, userId);
       if (config != null) {
         debugPrint('📖 [Storage] قراءة إعدادات التنبيهات');
       }

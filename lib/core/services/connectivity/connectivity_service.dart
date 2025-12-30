@@ -15,8 +15,8 @@ class ConnectivityService {
   bool _isConnected = false;
   List<ConnectivityResult> _connectionStatus = [ConnectivityResult.none];
 
-  final StreamController<bool> _connectionController = 
-      StreamController<bool>.broadcast();
+  final StreamController<bool> _connectionController =
+  StreamController<bool>.broadcast();
 
   StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
 
@@ -32,10 +32,10 @@ class ConnectivityService {
 
       // الحصول على الحالة الأولية
       _connectionStatus = await _connectivity.checkConnectivity();
-      
+
       // في بيئة التطوير/المحاكاة، قد نحتاج لاعتبار "any" اتصال كمتصل
       _isConnected = _connectionStatus.any(
-        (result) => result != ConnectivityResult.none
+              (result) => result != ConnectivityResult.none
       );
 
       // تحسين: إذا كنا في وضع التطوير (debug) ولم يتم اكتشاف اتصال، نفترض وجوده للمزامنة
@@ -66,7 +66,7 @@ class ConnectivityService {
     final wasConnected = _isConnected;
     _connectionStatus = results;
     _isConnected = results.any(
-      (result) => result != ConnectivityResult.none
+            (result) => result != ConnectivityResult.none
     );
 
     debugPrint('📶 [Connectivity] ═══════════════════════════════════');
@@ -93,7 +93,7 @@ class ConnectivityService {
     try {
       final results = await _connectivity.checkConnectivity();
       final hasConnection = results.any(
-        (result) => result != ConnectivityResult.none
+              (result) => result != ConnectivityResult.none
       );
 
       debugPrint('📶 [Connectivity] فحص الاتصال: ${hasConnection ? "متصل" : "منفصل"}');
@@ -109,7 +109,7 @@ class ConnectivityService {
 
   /// نوع الاتصال كنص
   String get connectionTypeString {
-    if (_connectionStatus.isEmpty || 
+    if (_connectionStatus.isEmpty ||
         _connectionStatus.first == ConnectivityResult.none) {
       return 'لا يوجد اتصال';
     }

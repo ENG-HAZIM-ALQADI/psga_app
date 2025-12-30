@@ -90,8 +90,8 @@ class SyncManager {
   /// - هل جارية المزامنة؟
   /// - كم عنصر معلق؟
   /// - حدث خطأ؟
-  final StreamController<SyncStatus> _syncStatusController = 
-      StreamController<SyncStatus>.broadcast();
+  final StreamController<SyncStatus> _syncStatusController =
+  StreamController<SyncStatus>.broadcast();
 
   /// 📤 دالة المزامنة (يتم تعيينها من الخارج)
   /// هذه الدالة تأخذ عنصر واحد وتحاول مزامنته مع Firebase
@@ -262,11 +262,11 @@ class SyncManager {
 
     /// 🌐 التحقق من الاتصال بالإنترنت
     final isConnected = _connectivityService.isConnected;
-    
+
     /// إذا لم يكن هناك اتصال (ما عدا وضع التطوير)
     if (!isConnected && !kDebugMode) {
       debugPrint('🔄 [SyncManager] 📴 لا يوجد اتصال - تأجيل المزامنة');
-      
+
       /// إرسال حالة: معلقة (لا إنترنت)
       /// الواجهة ستعرض: "انتظر الاتصال بالإنترنت"
       _emitStatus(
@@ -298,7 +298,7 @@ class SyncManager {
       if (totalItems == 0) {
         debugPrint('🔄 [SyncManager] ✅ لا توجد عناصر للمزامنة');
         _lastSyncTime = DateTime.now();
-        
+
         /// إرسال حالة: اكتملت المزامنة (لا شيء معلق)
         _emitStatus(
           isSyncing: false,
@@ -334,10 +334,10 @@ class SyncManager {
         if (result.success) {
           /// نجحت المزامنة!
           successCount++;
-          
+
           /// احذف العنصر من قائمة الانتظار
           await _syncService.removeFromSyncQueue(item.id);
-          
+
           debugPrint('🔄 [SyncManager] ✅ [$i/$totalItems] ${item.type.name}');
         } else {
           /// فشلت المزامنة
@@ -351,7 +351,7 @@ class SyncManager {
             error: result.error,                  /// رسالة الخطأ
             status: SyncItemStatus.failed,        /// وضع العنصر: فشل
           );
-          
+
           /// احفظ العنصر الفاشل (لإعادة المحاولة لاحقاً)
           await _syncService.addToSyncQueue(updatedItem);
 

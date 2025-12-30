@@ -145,12 +145,12 @@ class HiveService {
             } catch (e) {
               // خطأ في الفتح (قد يكون بسبب تعارض الـ lock أو بيانات تالفة)
               debugPrint('💾 [Hive] ⚠️ خطأ في فتح $boxName: ${e.toString()}');
-              
+
               // محاولة مسح الـ Box التالف وإعادة فتحه
               try {
                 debugPrint('💾 [Hive] 🧹 محاولة مسح البيانات التالفة من $boxName...');
                 await Hive.deleteBoxFromDisk(boxName);
-                
+
                 if (isTyped) {
                   if (boxName == HiveBoxes.users) {
                     await Hive.openBox<UserModel>(boxName);
@@ -195,7 +195,7 @@ class HiveService {
       await openBoxSafely<AlertConfigModel>(HiveBoxes.alertConfigs);
       await openBoxSafely(HiveBoxes.settings, isTyped: false);
       await openBoxSafely(HiveBoxes.cache, isTyped: false);
-      
+
       debugPrint('💾 [Hive] ✅ تم فتح جميع الـ Boxes بنجاح');
     } catch (e) {
       debugPrint('💾 [Hive] ❌ خطأ حرج في فتح Boxes: $e');
