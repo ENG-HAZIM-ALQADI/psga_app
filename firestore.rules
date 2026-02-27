@@ -1,0 +1,314 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =====================================
+    // Helper Functions
+    // =====================================
+
+    /// التحقق من المصادقة
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    /// التحقق من الملكية
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    /// التحقق من أن الحقل string غير فارغ
+    function isValidString(field) {
+      return request.resource.data[field] is string
+        && request.resource.data[field].size() > 0;
+    }
+
+    /// التحقق من صحة رقم الهاتف
+    function isValidPhone(field) {
+      return request.resource.data[field] is string
+        && request.resource.data[field].matches('^\\+?[0-9]{10,15}$');
+    }
+
+    /// التحقق من أن الـ userId غير متغيّر عند التحديث
+    function userIdUnchanged() {
+      return request.resource.data.userId == resource.data.userId;
+    }
+
+    // =====================================
+    // Users Collection
+    // =====================================
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+
+      allow create: if isAuthenticated()
+                    && request.auth.uid == userId
+                    && isValidString('email')
+                    && isValidString('name')
+                    && request.resource.data.email == request.auth.token.email
+                    && request.resource.data.id == userId;
+
+      allow update: if isOwner(userId)
+                    && request.resource.data.id == resource.data.id
+                    && request.resource.data.email == resource.data.email;
+
+      allow delete: if isOwner(userId);
+
+      // ─── Routes Subcollection ──────────────────────────────
+      // المسارات الرئيسية - Cloud Functions تقرأ بصلاحيات Admin
+      match /routes/{routeId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+                      && request.resource.data.userId == userId
+                      && isValidString('name');
+        allow update: if isOwner(userId) && userIdUnchanged();
+        allow delete: if isOwner(userId);
+      }
+
+      // ─── Trips Subcollection ──────────────────────────────
+      // Cloud Functions تحدّث الرحلات عند اكتمالها
+      match /trips/{tripId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+                      && request.resource.data.userId == userId;
+        allow update: if isOwner(userId) && userIdUnchanged();
+        allow delete: if isOwner(userId);
+
+        // مواقع الرحلة
+        match /locations/{locationId} {
+          allow read: if isOwner(userId);
+          allow write: if isOwner(userId);
+        }
+      }
+
+      // ─── Alerts Subcollection ──────────────────────────────
+      // Cloud Function: sendAlertNotifications يقرأ هذه التنبيهات
+      // ويقرأ contacts من /users/{userId}/contacts
+      match /alerts/{alertId} {
+        allow read: if isOwner(userId);
+
+        allow create: if isOwner(userId)
+                      && request.resource.data.userId == userId
+                      && request.resource.data.type is string
+                      && request.resource.data.type in [
+                           'deviation', 'sos', 'checkpoint', 'speedLimit',
+                           'lowBattery', 'noMovement', 'geofence', 'custom'
+                         ]
+                      && request.resource.data.severity is string
+                      && request.resource.data.severity in ['low', 'medium', 'high', 'critical'];
+
+        allow update: if isOwner(userId)
+                      && userIdUnchanged()
+                      && request.resource.data.type == resource.data.type;
+
+        allow delete: if isOwner(userId);
+      }
+
+      // ─── Contacts Subcollection ──────────────────────────────
+      // Cloud Functions تقرأ جهات الاتصال لإرسال الإشعارات
+      match /contacts/{contactId} {
+        allow read: if isOwner(userId);
+
+        allow create: if isOwner(userId)
+                      && request.resource.data.userId == userId
+                      && isValidString('name')
+                      && isValidPhone('phoneNumber');
+
+        allow update: if isOwner(userId)
+                      && userIdUnchanged()
+                      && request.resource.data.id == resource.data.id;
+
+        allow delete: if isOwner(userId);
+      }
+
+      // ─── Alert Configs Subcollection ──────────────────────────
+      match /alert_configs/{configId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+                      && request.resource.data.userId == userId;
+        allow update: if isOwner(userId) && userIdUnchanged();
+        allow delete: if isOwner(userId);
+      }
+
+      // ─── Trip Settings Subcollection ──────────────────────────
+      match /trip_settings/{settingsId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+                      && request.resource.data.userId == userId;
+        allow update: if isOwner(userId) && userIdUnchanged();
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // =====================================
+    // Top-level Routes Collection
+    // Mirror للـ subcollection - يُكتب بواسطة SyncService
+    // ✅ لا قيود إضافية على waypoints - التحقق يتم في الـ app
+    // =====================================
+    match /routes/{routeId} {
+      allow read: if isAuthenticated()
+                  && (resource.data.userId == request.auth.uid
+                      || request.auth.uid in resource.data.get('trustedContacts', []));
+
+      allow create: if isAuthenticated()
+                    && request.resource.data.userId == request.auth.uid
+                    && isValidString('name');
+
+      allow update: if isOwner(resource.data.userId) && userIdUnchanged();
+      allow delete: if isOwner(resource.data.userId);
+    }
+
+    // =====================================
+    // Top-level Trips Collection
+    // يُكتب من التطبيق و Cloud Functions
+    // =====================================
+    match /trips/{tripId} {
+      allow read: if isAuthenticated()
+                  && (resource.data.userId == request.auth.uid
+                      || request.auth.uid in resource.data.get('trustedContacts', []));
+
+      allow create: if isAuthenticated()
+                    && request.resource.data.userId == request.auth.uid
+                    && isValidString('routeId')
+                    && request.resource.data.status is string;
+
+      // ✅ السماح بتحديث route field عند "ابدأ من هنا" (modifiedRoute)
+      allow update: if isOwner(resource.data.userId)
+                    && userIdUnchanged()
+                    && request.resource.data.routeId == resource.data.routeId
+                    && request.resource.data.status is string;
+
+      allow delete: if isOwner(resource.data.userId);
+    }
+
+    // =====================================
+    // Top-level Alerts Collection
+    // Cloud Function: sendAlertNotifications يُنشئ تنبيهات
+    // Cloud Function: sendSOSAlert يُنشئ تنبيهات SOS
+    // =====================================
+    match /alerts/{alertId} {
+      // قراءة: المالك أو المستلم (للإشعارات المشتركة)
+      allow read: if isAuthenticated()
+                  && (resource.data.userId == request.auth.uid
+                      || resource.data.get('recipientId', '') == request.auth.uid);
+
+      // إنشاء: المالك فقط
+      allow create: if isAuthenticated()
+                    && request.resource.data.userId == request.auth.uid;
+
+      // تحديث: المالك أو المستلم (للإقرار acknowledge)
+      allow update: if isAuthenticated()
+                    && (resource.data.userId == request.auth.uid
+                        || resource.data.get('recipientId', '') == request.auth.uid);
+
+      allow delete: if isOwner(resource.data.userId);
+    }
+
+    // =====================================
+    // Top-level Contacts Collection
+    // Cloud Function: sendAlertNotifications يقرأ من هنا للـ legacy
+    // =====================================
+    match /contacts/{contactId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+
+      allow create: if isAuthenticated()
+                    && request.resource.data.userId == request.auth.uid
+                    && isValidString('name')
+                    && isValidPhone('phoneNumber');
+
+      allow update: if isAuthenticated()
+                    && resource.data.userId == request.auth.uid
+                    && userIdUnchanged();
+
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // =====================================
+    // Top-level Alert Configs Collection
+    // =====================================
+    match /alert_configs/{configId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuthenticated()
+                    && resource.data.userId == request.auth.uid
+                    && userIdUnchanged();
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // =====================================
+    // Trusted Contacts Collection
+    // =====================================
+    match /trustedContacts/{contactId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated()
+                    && request.resource.data.userId == request.auth.uid
+                    && isValidString('name');
+      allow update: if isAuthenticated()
+                    && resource.data.userId == request.auth.uid
+                    && userIdUnchanged();
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // =====================================
+    // Device Tokens Collection
+    // Cloud Function: cleanupInvalidTokens يحذف الـ tokens المنتهية
+    // Cloud Function: sendAlertNotifications يقرأ الـ tokens
+    // =====================================
+    match /deviceTokens/{tokenId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuthenticated()
+                    && resource.data.userId == request.auth.uid
+                    && userIdUnchanged();
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // =====================================
+    // ML Models Collection
+    // =====================================
+    match /mlModels/{modelId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuthenticated()
+                    && resource.data.userId == request.auth.uid
+                    && userIdUnchanged();
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // =====================================
+    // Cloud Functions Logs
+    // يُكتب فقط من Admin SDK (Cloud Functions)
+    // =====================================
+    match /functionLogs/{logId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow write: if false; // Cloud Functions Admin SDK فقط
+    }
+
+    // =====================================
+    // Notification Stats (Cloud Functions getNotificationStats)
+    // =====================================
+    match /notificationStats/{statId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow write: if false; // Cloud Functions Admin SDK فقط
+    }
+
+    // =====================================
+    // Trip Settings - Top Level (backup)
+    // يُكتب من التطبيق عبر /users/{uid}/trip_settings (الطريق الأساسي)
+    // =====================================
+    match /trip_settings/{settingsId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated()
+                    && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuthenticated()
+                    && resource.data.userId == request.auth.uid
+                    && userIdUnchanged();
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // =====================================
+    // Deny all other access
+    // =====================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

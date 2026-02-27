@@ -1,0 +1,18 @@
+# FastAPI Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+
+# Machine Learning
+scikit-learn==1.4.0
+numpy==1.26.3
+scipy==1.12.0
+
+# Utilities
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Development
+pytest==8.0.0
+httpx==0.26.0

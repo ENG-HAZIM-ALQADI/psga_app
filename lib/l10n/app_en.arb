@@ -1,0 +1,1095 @@
+{
+  "@@locale": "en",
+  "appName": "PSGA - Personal Security Guard",
+  "@appName": {
+    "description": "The application name"
+  },
+  "welcome": "Welcome",
+  "getStarted": "Get Started",
+  "login": "Login",
+  "register": "Register",
+  "logout": "Logout",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "forgotPassword": "Forgot Password?",
+  "dontHaveAccount": "Don't have an account?",
+  "alreadyHaveAccount": "Already have an account?",
+  "signUp": "Sign Up",
+  "signIn": "Sign In",
+  "resetPassword": "Reset Password",
+  "sendResetLink": "Send Reset Link",
+  "verifyEmail": "Verify Email",
+  "checkYourEmail": "Check your email for verification link",
+  "fullName": "Full Name",
+  "phoneNumber": "Phone Number",
+  "profile": "Profile",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "home": "Home",
+  "routes": "Routes",
+  "trips": "Trips",
+  "emergency": "Emergency",
+  "contacts": "Contacts",
+  "alerts": "Alerts",
+  "maps": "Maps",
+  "createRoute": "Create Route",
+  "editRoute": "Edit Route",
+  "deleteRoute": "Delete Route",
+  "routeName": "Route Name",
+  "routeDescription": "Route Description",
+  "startPoint": "Start Point",
+  "endPoint": "End Point",
+  "waypoints": "Waypoints",
+  "addWaypoint": "Add Waypoint",
+  "distance": "Distance",
+  "duration": "Duration",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "startTrip": "Start Trip",
+  "endTrip": "End Trip",
+  "pauseTrip": "Pause Trip",
+  "resumeTrip": "Resume Trip",
+  "currentSpeed": "Current Speed",
+  "distanceCovered": "Distance Covered",
+  "timeElapsed": "Time Elapsed",
+  "remainingDistance": "Remaining Distance",
+  "estimatedTime": "Estimated Time",
+  "tripActive": "Trip Active",
+  "tripPaused": "Trip Paused",
+  "tripCompleted": "Trip Completed",
+  "deviationDetected": "Deviation Detected!",
+  "deviationDistance": "You are {distance}m away from route",
+  "@deviationDistance": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "imOkay": "I'm Okay",
+  "countdown": "Countdown: {seconds}s",
+  "@countdown": {
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "sos": "SOS",
+  "sosButton": "Emergency SOS",
+  "holdToActivate": "Hold to Activate",
+  "sosActivated": "SOS Activated!",
+  "allContactsNotified": "All contacts have been notified",
+  "emergencyNumber": "Emergency Number",
+  "callEmergency": "Call Emergency",
+  "addContact": "Add Contact",
+  "editContact": "Edit Contact",
+  "contactName": "Contact Name",
+  "relationship": "Relationship",
+  "primaryContact": "Primary Contact",
+  "allowLocationSharing": "Allow Location Sharing",
+  "father": "Father",
+  "mother": "Mother",
+  "spouse": "Spouse",
+  "friend": "Friend",
+  "brother": "Brother",
+  "sister": "Sister",
+  "other": "Other",
+  "alertSettings": "Alert Settings",
+  "enableAlerts": "Enable Alerts",
+  "deviationThreshold": "Deviation Threshold",
+  "countdownDuration": "Countdown Duration",
+  "autoEscalation": "Auto Escalation",
+  "enableSound": "Enable Sound",
+  "enableVibration": "Enable Vibration",
+  "quietHours": "Quiet Hours",
+  "syncStatus": "Sync Status",
+  "synced": "Synced",
+  "syncing": "Syncing...",
+  "pendingSync": "{count} items pending",
+  "@pendingSync": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "syncFailed": "Sync Failed",
+  "offline": "Offline",
+  "online": "Online",
+  "offlineMode": "You are offline. Data will sync when connection is restored.",
+  "loading": "Loading...",
+  "pleaseWait": "Please wait...",
+  "success": "Success",
+  "error": "Error",
+  "warning": "Warning",
+  "info": "Info",
+  "retry": "Retry",
+  "confirm": "Confirm",
+  "yes": "Yes",
+  "no": "No",
+  "noData": "No data available",
+  "noRoutes": "No routes yet. Create your first route!",
+  "noTrips": "No trips yet. Start your first trip!",
+  "noContacts": "No contacts yet. Add your first contact!",
+  "noAlerts": "No alerts",
+  "passwordTooShort": "Password must be at least 8 characters",
+  "passwordMustContainUppercase": "Password must contain uppercase letter",
+  "passwordMustContainNumber": "Password must contain number",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "invalidEmail": "Invalid email address",
+  "fieldRequired": "This field is required",
+  "invalidPhoneNumber": "Invalid phone number",
+  "passwordStrength": "Password Strength",
+  "weak": "Weak",
+  "medium": "Medium",
+  "strong": "Strong",
+  "veryStrong": "Very Strong",
+  "loginSuccess": "Login successful",
+  "loginFailed": "Login failed",
+  "registerSuccess": "Registration successful",
+  "registerFailed": "Registration failed",
+  "logoutSuccess": "Logout successful",
+  "routeCreated": "Route created successfully",
+  "routeUpdated": "Route updated successfully",
+  "routeDeleted": "Route deleted successfully",
+  "tripStarted": "Trip started",
+  "tripEnded": "Trip ended",
+  "tripPausedSuccess": "Trip paused",
+  "tripResumed": "Trip resumed",
+  "alertTriggered": "Alert triggered",
+  "alertAcknowledged": "Alert acknowledged",
+  "alertCancelled": "Alert cancelled",
+  "contactAdded": "Contact added successfully",
+  "contactUpdated": "Contact updated successfully",
+  "contactDeleted": "Contact deleted successfully",
+  "unknownError": "An unknown error occurred",
+  "networkError": "Network error. Please check your connection.",
+  "serverError": "Server error. Please try again later.",
+  "areYouSure": "Are you sure?",
+  "deleteConfirmation": "Are you sure you want to delete this?",
+  "logoutConfirmation": "Are you sure you want to logout?",
+  "km": "km",
+  "m": "m",
+  "kmh": "km/h",
+  "minutes": "minutes",
+  "hours": "hours",
+  "seconds": "seconds",
+  "primaryContactHint": "Will be contacted first in emergencies",
+  "receiveSms": "Receive SMS",
+  "receiveSmsHint": "Send text messages in emergency situations",
+  "receiveNotifications": "Receive App Notifications",
+  "receiveNotificationsHint": "Notifications via Firebase Cloud Messaging",
+  "receiveEmail": "Receive Email",
+  "receiveEmailHint": "Send alerts via email",
+  "allowLocationSharingHint": "This contact can track your location during trips",
+  "emergencyContactsOnly": "Emergency Contacts Only",
+  "selectLocationFirst": "Please select a location first",
+  "radius": "Radius",
+  "downloadArea": "Area",
+  "zoomLevels": "Zoom Levels",
+  "estimatedSize": "Estimated Size",
+  "routeNeedsPoints": "Route needs at least 2 points to display",
+  "mapType": "Map Type",
+  "tripDetails": "Trip Details",
+  "backToHistory": "Back to Trip History",
+  "weeklyStats": "Weekly Statistics",
+  "weeklyActivity": "Weekly Activity",
+  "routesMap": "Routes Map",
+  "recentTrips": "Recent Trips",
+  "startLastRoute": "Start Last Route",
+  "confirmDeleteAccount": "Yes, Delete My Account Permanently",
+  "mlAnalysisFailed": "Smart analysis failed - will retry",
+  "sendingAlert": "Sending alert to contacts...",
+  "preciseTrackingEnabled": "Precise tracking activated",
+  "viewOnMap": "View on Map",
+  "currentLocation": "Current Location",
+  "pickFromMap": "Pick from Map",
+  "manualInput": "Manual Input",
+  "checkpointWaypoint": "Checkpoint",
+  "mustPassPoint": "Must pass through this point",
+  "invalidCoordinates": "Please enter valid coordinates",
+  "idle": "Idle",
+  "weatherClear": "Clear",
+  "weatherPartlyCloudy": "Partly Cloudy",
+  "weatherFoggy": "Foggy",
+  "weatherRainy": "Rainy",
+  "weatherSnowy": "Snowy",
+  "weatherStormy": "Stormy",
+  "notificationsTitle": "Notifications",
+  "noNotifications": "No notifications",
+  "noNotificationsSubtitle": "When you receive alerts, they will appear here",
+  "loadingNotifications": "Loading notifications...",
+  "alertDetails": "Alert details",
+  "messageLabel": "Message",
+  "timeLabel": "Time",
+  "severityLabel": "Severity",
+  "statusLabel": "Status",
+  "locationLabel": "Location",
+  "noActiveAlerts": "No active alerts",
+  "allAlertsProcessed": "All alerts have been processed",
+  "resolveAlert": "Resolve Alert",
+  "resolveAlertConfirm": "Confirm Alert Resolution",
+  "nameRequired": "Name is required",
+  "fullNameLabel": "Full Name *",
+  "fullNameHint": "Enter contact name",
+  "phoneRequired": "Phone number is required",
+  "emailOptionalLabel": "Email (optional)",
+  "emailInvalid": "Invalid email address",
+  "notificationSettings": "Notification Settings",
+  "saveChanges": "Save Changes",
+  "searchContact": "Search for a contact...",
+  "clearSearch": "Clear",
+  "refreshTooltip": "Refresh",
+  "accountSection": "Account",
+  "profileTitle": "Profile",
+  "profileSubtitle": "View and edit your personal info",
+  "changePassword": "Change Password",
+  "addPassword": "Add Password",
+  "changePasswordSubtitle": "Update your password",
+  "addPasswordSubtitle": "Add a password to your account",
+  "alertsSection": "Alerts",
+  "alertSettingsTitle": "Alert Settings",
+  "alertSettingsSubtitle": "Manage alerts and notifications",
+  "contactsTitle": "Contacts",
+  "contactsSubtitle": "Manage emergency contacts",
+  "appSection": "App",
+  "tripSettingsTitle": "Trip Settings",
+  "tripSettingsSubtitle": "Customize distance thresholds and deviation detection",
+  "mapsSettingsTitle": "Maps Settings",
+  "mapsSettingsSubtitle": "Offline maps and places search",
+  "themeTitle": "Theme",
+  "aboutTitle": "About App",
+  "aboutSubtitle": "Version 1.0.0",
+  "privacySection": "Privacy & Security",
+  "privacyPolicy": "Privacy Policy",
+  "termsOfUse": "Terms of Use",
+  "deleteAccount": "Delete Account",
+  "deleteAccountPermanent": "Delete Account Permanently",
+  "deleteAccountWarning": "Warning: This action cannot be undone!",
+  "deleteAccountItems": "The following will be deleted:",
+  "deleteAccountItem1": "All your account information",
+  "deleteAccountItem2": "All your saved trips",
+  "deleteAccountItem3": "All your contacts",
+  "deleteAccountItem4": "All your settings",
+  "deleteAccountItem5": "All stored data",
+  "deleteAccountConfirm": "Are you absolutely sure you want to delete your account?",
+  "loggingOut": "Logging out...",
+  "chooseLanguage": "Choose Language",
+  "chooseTheme": "Choose Theme",
+  "themeLight": "Light",
+  "themeLightSubtitle": "Light, eye-friendly theme",
+  "themeDark": "Dark",
+  "themeDarkSubtitle": "Dark theme for eye comfort",
+  "themeSystem": "System",
+  "themeSystemSubtitle": "Follows your device settings",
+  "themeChangedLight": "Theme changed to Light",
+  "themeChangedDark": "Theme changed to Dark",
+  "themeChangedSystem": "Theme follows system",
+  "appDescription": "Smart personal security app to keep you safe during trips",
+  "weatherHeat": "Extreme heat - be careful",
+  "weatherHeavyRain": "Heavy rain - be cautious",
+  "goodMorning": "Good morning",
+  "goodAfternoon": "Good afternoon",
+  "goodEvening": "Good evening",
+  "kmPerHour": "km/h",
+  "activeTripBanner": "Active trip",
+  "pausedTripBanner": "Trip paused",
+  "distanceLabel": "Distance",
+  "tripsLabel": "Trips",
+  "deviationsLabel": "Deviations",
+  "newRoute": "New Route",
+  "routesMapTitle": "Routes Map",
+  "recentTripsTitle": "Recent Trips",
+  "startRouteBtn": "Start",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "loginRequired": "Login required",
+  "mlAnalyzing": "AI analysis in progress...",
+  "sosActivatedFull": "SOS activated - alert sent to all contacts",
+  "tripEndedSuccess": "Trip ended successfully",
+  "deviationDetectedSeverity": "Deviation detected",
+  "deviationResolved": "Deviation resolved",
+  "activeEmergency": "Emergency Active",
+  "sosTriggerQuestion": "Do you want to activate SOS and alert your contacts?",
+  "contactsRequired": "Important Notice",
+  "contactsRequiredMsg": "At least one contact must be added before starting a trip",
+  "contactsRequiredNote": "Contacts are necessary to send safety alerts in emergencies",
+  "farFromStart": "You are far from the start point",
+  "routeNameFieldLabel": "Route Name *",
+  "routeNameHint": "Example: Home - Work",
+  "routeNameRequired": "Please enter a route name",
+  "routeNameTooShort": "Route name must be at least 3 characters",
+  "routeDescriptionLabel": "Description (optional)",
+  "routeDescriptionHint": "Add a description for the route...",
+  "waypointsCount": "Points",
+  "addWaypointTooltip": "Add point",
+  "noWaypointsYet": "No points added yet",
+  "minimumWaypoints": "At least 2 points are required",
+  "saveRouteBtn": "Save Route",
+  "saveChangesBtn": "Save Changes",
+  "currentLocationWaypoint": "Start Point (My Location)",
+  "waypointNameLabel": "Point Name *",
+  "waypointNameHint": "Example: Home",
+  "waypointDescLabel": "Description (optional)",
+  "latitudeLabel": "Latitude *",
+  "longitudeLabel": "Longitude *",
+  "radiusLabel": "Radius (meters)",
+  "addNewPoint": "Add New Point",
+  "editPoint": "Edit Point",
+  "deletePoint": "Delete Point",
+  "deletePointConfirm": "Do you want to delete",
+  "routeSavedSuccess": "Route saved successfully",
+  "routeUpdatedSuccess": "Route updated successfully",
+  "locationAdded": "Your current location was added as start point",
+  "mapLocationAdded": "Location added from map successfully",
+  "calculationSuccess": "Details calculated successfully",
+  "calculationFailed": "Calculation failed. Please try again",
+  "waitForCalculation": "Wait for current calculation to finish",
+  "gettingLocation": "Getting your location...",
+  "addRoutPointsFirst": "Please add points to the route first",
+  "minimumTwoPoints": "Route must contain at least 2 points (start and end)",
+  "saveTooltip": "Save changes",
+  "savingRoute": "Saving route...",
+  "weatherCold": "⚠️ Very cold weather",
+  "action": "Action",
+  "unknownStatus": "Unknown status",
+  "timeEstimate": "Estimated Time",
+  "sosBtnLabel": "Emergency SOS",
+  "startWaypoint": "Start Point",
+  "endWaypoint": "End Point",
+  "startWaypointCurrent": "Start Point (My Location)",
+  "endWaypointCurrent": "End Point (My Location)",
+  "intermediateWaypoint": "Intermediate Point",
+  "intermediateWaypointCurrent": "Intermediate Point (My Location)",
+  "selectStartPoint": "Select Start Point",
+  "selectWaypointOrEnd": "Select Waypoint or End Point",
+  "weekDayMon": "Mon",
+  "weekDayTue": "Tue",
+  "weekDayWed": "Wed",
+  "weekDayThu": "Thu",
+  "weekDayFri": "Fri",
+  "weekDaySat": "Sat",
+  "weekDaySun": "Sun",
+  "arabicLanguage": "Arabic",
+  "greetingMorning": "Good morning",
+  "greetingAfternoon": "Good afternoon",
+  "greetingEvening": "Good evening",
+  "activeTrip": "Active Trip",
+  "activeTripNow": "Active trip now",
+  "tripPausedStatus": "Trip paused",
+  "pausedTrip": "Paused Trip",
+  "saveEdits": "Save Edits",
+  "descriptionOptional": "Description (optional)",
+  "timeLabel2": "Time",
+  "noActiveTrip2": "No active trip",
+  "sosConfirmMsg": "Do you want to activate SOS and send an alert to contacts?",
+  "account": "Account",
+  "privacySecurity": "Privacy & Security",
+  "about": "About",
+  "version": "Version",
+  "routeNameMinLength": "Route name must be at least 3 characters",
+  "addCurrentLocation": "Your current location has been added as start point automatically",
+  "saveTooltipEdits": "Save edits",
+  "waypointsCount2": "Points",
+  "addWaypointTooltip2": "Add point",
+  "selectStartPointTitle": "Select Start Point",
+  "selectWaypointTitle": "Select intermediate or end point",
+  "manualWaypointTitle": "Add New Point",
+  "waypointNameRequired": "Point Name *",
+  "waypointDescLabel2": "Description (optional)",
+  "editPointTitle": "Edit Point",
+  "deletePointTitle": "Delete Point",
+  "deletePointConfirm2": "Are you sure you want to delete this point?",
+  "requiredFields": "Please fill in all required fields",
+  "unknownActiveTrip": "Unknown status",
+  "distanceKm": "km",
+  "durationHours": "h",
+  "durationMinutes": "min",
+  "deviationMeters": "meters",
+  "activeEmergencyFull": "🆘 SOS activated - Alert sent to all contacts",
+  "contactsRequiredDialog": "Important Warning",
+  "addContactFirst": "You must add at least one contact before starting a trip",
+  "contactsNecessary": "Contacts are necessary to send safety alerts in emergencies",
+  "locationFarTitle": "Your location is far from the start point",
+  "locationFarMsg": "You are {distance} meters ({km} km) from the saved start point",
+  "@locationFarMsg": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      },
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "startFromCurrentLocation": "You can start from your current location or add a new route",
+  "activeExistingTrip": "You have an active trip",
+  "existingTripOptions": "You have an active trip. Do you want to:\n\n• Continue the current active trip\n• Or end the current trip and start a new one?",
+  "currentLocationAndStart": "Your current location and start point",
+  "routeInfoLoadFailed": "Failed to load route information",
+  "invalidRoute": "Invalid route",
+  "changePasswordSubtitle2": "Update your password",
+  "addPasswordSubtitle2": "Add a password (Google/Apple sign in)",
+  "alertSettingsSubtitle2": "Manage alerts and notifications",
+  "contactsSubtitle2": "Manage emergency contacts",
+  "tripSettingsSubtitle2": "Customize distance thresholds and deviation detection",
+  "appearanceLabel": "Appearance",
+  "aboutApp": "About the App",
+  "aboutAppVersion": "Version 1.0.0",
+  "deleteAccountPermanent2": "Delete Account Permanently",
+  "deleteAccountWarning2": "Warning: This action cannot be undone!",
+  "deleteAccountItems2": "This will delete:",
+  "weatherWindSpeed": "{speed} km/h",
+  "@weatherWindSpeed": {
+    "placeholders": {
+      "speed": {
+        "type": "String"
+      }
+    }
+  },
+  "weatherRainChance": "{percent}%",
+  "@weatherRainChance": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "weatherHeatWarning": "⚠️ Extreme heat — Be careful during the trip",
+  "weatherHeavyRainWarning": "⚠️ Heavy rain — Use caution",
+  "weatherRainWarning": "⚠️ Rain probability {percent}%",
+  "@weatherRainWarning": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "weatherWindWarning": "⚠️ Strong wind {speed} km/h",
+  "@weatherWindWarning": {
+    "placeholders": {
+      "speed": {
+        "type": "String"
+      }
+    }
+  },
+  "weatherColdWarning": "⚠️ Very cold weather",
+  "tripElapsedTime": "{hours}h {minutes}m",
+  "@tripElapsedTime": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "tripElapsedMinutes": "{minutes}m",
+  "@tripElapsedMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "daysAgo": "{days} days ago",
+  "@daysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "deviations": "Deviations",
+  "mapSettings": "Maps Settings",
+  "englishLanguage": "English",
+  "pleaseLogin": "You must be logged in",
+  "noActiveTrip": "No active trip",
+  "searchPlace": "Search for a place...",
+  "passwordRequired": "Password is required",
+  "passwordMinLength": "Password must be at least 8 characters",
+  "passwordUppercase": "Password must contain at least one uppercase letter",
+  "passwordNumber": "Password must contain at least one number",
+  "confirmPasswordRequired": "Please confirm your password",
+  "passwordMismatch": "Passwords do not match",
+  "invalidPhone": "Invalid phone number",
+  "cancelTrip": "Cancel Trip",
+  "pauseTripTitle": "Pause Trip",
+  "pauseTripContent": "Do you want to pause the trip?",
+  "endTripContent": "Do you want to end this trip?",
+  "tripSummaryDistance": "Distance: {distance} km",
+  "@tripSummaryDistance": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "tripSummaryDuration": "Duration: {duration}",
+  "@tripSummaryDuration": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "tripSummaryWaypoints": "Points Visited: {visited}/{total}",
+  "@tripSummaryWaypoints": {
+    "placeholders": {
+      "visited": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelTripTitle": "Cancel Trip",
+  "cancelTripContent": "Do you want to cancel this trip?",
+  "back": "Back",
+  "sosContactsList": "All contacts",
+  "sosCurrentLocation": "Your current location",
+  "sosTripInfo": "Trip information",
+  "deleteArea": "Delete Area",
+  "deleteAreaContent": "Do you want to delete this area from saved maps?",
+  "deleteAllMaps": "Delete All Maps",
+  "deleteAllMapsContent": "Do you want to delete all saved maps?",
+  "deleteAll": "Delete All",
+  "downloadOfflineMaps": "Download Offline Maps",
+  "searchPlaces": "Search Places",
+  "deleteAllMapsBtn": "Delete All Maps",
+  "settingsSavedSuccess": "Settings saved successfully",
+  "settingsSaveFailed": "Failed: {message}",
+  "@settingsSaveFailed": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "savingSettings": "Saving settings...",
+  "responseTime": "Response Time:",
+  "quietHoursStart": "Start Time",
+  "quietHoursEnd": "End Time",
+  "settingsResetDefault": "Settings reset to defaults",
+  "resetToDefaults": "Reset to Defaults",
+  "deleteRouteConfirmMsg": "Do you want to delete route \"{name}\"?\n\nThis action cannot be undone.",
+  "@deleteRouteConfirmMsg": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "routeNeedsMinPoints": "Route must have at least 2 points",
+  "loginRequired2": "You must be logged in first",
+  "addContactBtn": "Add Contact",
+  "continueActiveTrip": "Continue Active Trip",
+  "startNewTrip": "Start New Trip",
+  "startFromHere": "Start From Here",
+  "locationFailed": "Failed to determine your location",
+  "viewActiveTrip": "View Active Trip",
+  "startNewTripBtn": "Start New Trip",
+  "currentLocationLabel": "Current Location",
+  "startPointLabel": "Start Point",
+  "deleteWaypointConfirm": "Do you want to delete \"{name}\"?",
+  "@deleteWaypointConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "allFilterLabel": "All ({count})",
+  "@allFilterLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "favoritesFilterLabel": "Favorites ({count})",
+  "@favoritesFilterLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "activeFilterLabel": "Active ({count})",
+  "@activeFilterLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "saving": "Saving...",
+  "setPrimaryContactSuccess": "Primary contact has been set",
+  "addFirstContact": "Add First Contact",
+  "confirmDeleteTitle": "Confirm Delete",
+  "deleteContactConfirm": "Do you want to delete {name}?",
+  "@deleteContactConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "infoTitle": "Info",
+  "ok": "OK",
+  "locatingMsg": "Locating...",
+  "sosCancelledMsg": "SOS signal cancelled",
+  "chooseImageSource": "Choose Image Source",
+  "gallery": "Gallery",
+  "camera": "Camera",
+  "allTrips": "All",
+  "completedTrips": "Completed",
+  "cancelledTrips": "Cancelled",
+  "reEnterEmail": "Re-enter Email",
+  "skipForNow": "Skip for now",
+  "errorLocationTracking": "locationTrackingFailed",
+  "errorUnexpected": "unexpectedError",
+  "errorSystem": "systemError",
+  "errorNoActiveTrip": "noActiveTripError",
+  "errorEmergencyFailed": "emergencyActivationFailed",
+  "errorAutoTrackingFailed": "autoTrackingFailed",
+  "errorRouteInfoFailed": "routeInfoLoadFailed",
+  "errorInvalidRoute": "invalidRoute",
+  "errorLocationFailed": "locationDetermFailed",
+  "errorDuringLocationCheck": "locationCheckError",
+  "errorDuringTripStart": "tripStartError",
+  "locationTrackingFailed": "Failed to start location tracking",
+  "unexpectedError": "An unexpected error occurred",
+  "systemError": "System error",
+  "noActiveTripError": "No active trip",
+  "emergencyActivationFailed": "Failed to activate emergency",
+  "autoTrackingFailed": "Failed to start auto tracking",
+  "routeInfoLoadFailed2": "Failed to load route information",
+  "invalidRoute2": "Invalid route",
+  "locationDetermFailed": "Failed to determine your location",
+  "locationCheckError": "Error occurred while checking location",
+  "tripStartError": "Error occurred while starting trip",
+  "alertTriggerFailed": "Failed to trigger alert",
+  "sosSendFailed": "Failed to send SOS",
+  "alertAcknowledgeFailed": "Failed to acknowledge alert",
+  "alertLoadFailed": "Failed to load alerts",
+  "escalationStartFailed": "Failed to start escalation",
+  "escalationCancelFailed": "Failed to cancel escalation",
+  "alertSettingsSaveFailed": "Failed to save alert settings",
+  "alertSettingsLoadFailed": "Failed to load alert settings",
+  "routesLoadError": "Error loading routes",
+  "routeCreateError": "Error creating route",
+  "routeUpdateError": "Error updating route",
+  "routeDeleteError": "Error deleting route",
+  "activeRoutesLoadError": "Error loading active routes",
+  "routeStatusUpdateError": "Error updating route status",
+  "favoritesLoadError": "Error loading favorite routes",
+  "contactsLoadFailed": "Failed to load contacts",
+  "emergencyContactsLoadFailed": "Failed to load emergency contacts",
+  "contactAddFailed": "Failed to add contact",
+  "contactUpdateFailed": "Failed to update contact",
+  "contactDeleteFailed": "Failed to delete contact",
+  "contactSearchFailed": "Search failed",
+  "setPrimaryContactFailed": "Failed to set primary contact",
+  "calculatingRoute": "Calculating route...",
+  "routeCalcError": "Error occurred while calculating route",
+  "searchingAlternatives": "Searching for alternative routes...",
+  "noRoutesFound": "No routes found",
+  "alternativeSearchError": "Error searching for alternative routes",
+  "searching": "Searching...",
+  "noSearchResults": "No search results",
+  "searchError": "Error occurred while searching",
+  "searchingNearby": "Searching for nearby places...",
+  "noNearbyPlaces": "No nearby places",
+  "loadingDetails": "Loading details...",
+  "featureUnderDevelopment": "This feature is under development",
+  "loadingError": "Error occurred while loading",
+  "searchingEmergency": "Searching for emergency places...",
+  "preparingDownload": "Preparing...",
+  "regionDownloadFailed": "Failed to download region",
+  "downloadError": "Error occurred while downloading",
+  "regionDeleteFailed": "Failed to delete region",
+  "deleteError": "Error occurred while deleting",
+  "mapsDeleteFailed": "Failed to delete maps",
+  "tempCelsius": "{temp}°C",
+  "@tempCelsius": {
+    "placeholders": {
+      "temp": {
+        "type": "String"
+      }
+    }
+  },
+  "currentPasswordLabel": "Current Password",
+  "currentPasswordHint": "Enter current password",
+  "newPasswordLabel": "New Password",
+  "newPasswordHint": "Enter new password",
+  "confirmNewPasswordLabel": "Confirm New Password",
+  "confirmNewPasswordHint": "Re-enter new password",
+  "confirmPasswordEmptyError": "Please confirm your password",
+  "passwordChanged": "Password changed successfully. You will be logged out now.",
+  "passwordMustBeDifferent": "New password must be different from current password",
+  "importantInfo": "Important Info",
+  "addPasswordInfo": "Add Password",
+  "addPasswordHint": "By adding a password, you can sign in with email & password instead of Google/Apple only",
+  "changePasswordInfo": "You will need to sign in again after changing your password",
+  "changePasswordBtn": "Change Password",
+  "addPasswordBtn": "Add Password",
+  "securityTipsTitle": "Strong Password Tips",
+  "securityTip1": "Use at least 8 characters",
+  "securityTip2": "Mix uppercase and lowercase letters",
+  "securityTip3": "Add numbers and special characters",
+  "securityTip4": "Avoid using personal information",
+  "securityTip5": "Don't reuse passwords across accounts",
+  "generalSettings": "General Settings",
+  "enableAlertsSwitchTitle": "Enable Alerts",
+  "enableAlertsSwitchSubtitle": "Enable or disable all alerts",
+  "soundTitle": "Sound",
+  "soundSubtitle": "Play alert sound",
+  "vibrationTitle": "Vibration",
+  "vibrationSubtitle": "Vibrate on alert",
+  "autoEscalationTitle": "Auto Escalation",
+  "autoEscalationSubtitle": "Automatically notify trusted contacts",
+  "deviationNoteTitle": "Note",
+  "deviationNoteBody": "Deviation threshold settings are now available in Trip Settings",
+  "countdownSectionTitle": "Countdown Duration",
+  "countdownSeconds": "{count} sec",
+  "@countdownSeconds": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "countdownSliderLabel": "{count}s",
+  "@countdownSliderLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "countdownHint": "Time available to press \"I'm Okay\" before sending alert",
+  "quietHoursSectionTitle": "Quiet Hours",
+  "enableQuietHoursTitle": "Enable Quiet Hours",
+  "enableQuietHoursSubtitle": "Do not send alerts during specific times",
+  "notSet": "Not set",
+  "alertTypesSectionTitle": "Alert Types",
+  "alertTypeDeviation": "Route Deviation",
+  "alertTypeSos": "Emergency (SOS)",
+  "alertTypeNoMovement": "No Movement",
+  "alertTypeLowBattery": "Low Battery",
+  "alertTypeConnectionLost": "Connection Lost",
+  "saveSettingsBtn": "Save Settings",
+  "resetDefaultsBtn": "Reset to Defaults",
+  "saveSettingsTooltip": "Save settings",
+  "contactsSearchHint": "Search contacts...",
+  "showEmergencyOnly": "Emergency contacts only",
+  "showAll": "Show all",
+  "contactsStatsTitle": "Contact Statistics",
+  "statTotal": "Total",
+  "statEmergency": "Emergency",
+  "statSms": "SMS",
+  "statPriority": "Priority",
+  "noContactsTitle": "No contacts yet",
+  "noContactsSubtitle": "Add trusted contacts to receive alerts",
+  "contactsInfoBody": "Trusted contacts will be notified in emergencies:\n\n• Route deviation\n• SOS button press\n• No movement for a long time\n\nYou can set priority and notification type for each contact.",
+  "contactTypePrimary": "Primary",
+  "contactTypeEmergency": "Emergency",
+  "contactTypeFamily": "Family",
+  "contactTypeFriend": "Friend",
+  "contactTypeColleague": "Colleague",
+  "contactTypeSecurity": "Security",
+  "contactTypeOther": "Other",
+  "tripSettingsInfoBody": "You can customize validation distances and deviation thresholds according to your needs. Default values are recommended for most cases.",
+  "startLocationSectionTitle": "Start Location Validation",
+  "allowedDistanceTitle": "Allowed distance from start point",
+  "enableLocationValidationTitle": "Enable Location Validation",
+  "enableLocationValidationSubtitle": "Verify proximity to start point before starting trip",
+  "alwaysStartFromCurrentTitle": "Always Start from Current Location",
+  "alwaysStartFromCurrentSubtitle": "Skip location check and start from current location",
+  "updateOriginalRouteTitle": "Update Original Route",
+  "updateOriginalRouteSubtitle": "When starting from a different location, save new point to original route",
+  "startFromHereUsageCount": "Used \"Start from here\" {count} times",
+  "@startFromHereUsageCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "deviationSectionTitle": "Deviation Detection Thresholds",
+  "deviationLow": "Low Deviation (Low)",
+  "deviationMedium": "Medium Deviation (Medium)",
+  "deviationHigh": "High Deviation (High)",
+  "generalSettingsSection": "General Settings",
+  "autoRouteCalcTitle": "Auto Route Calculation",
+  "autoRouteCalcSubtitle": "Automatically calculate distance and time when adding points",
+  "settingsResetSuccess": "Settings reset to defaults",
+  "settingsSavedSuccessMsg": "Settings saved successfully",
+  "saveSettingsTooltipTrip": "Save settings",
+  "meters": "m",
+  "metersUnit": "meters",
+  "distanceMeters": "{value} m",
+  "@distanceMeters": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "distanceMetersValue": "{value} meters",
+  "@distanceMetersValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "profileEmailLabel": "Email",
+  "profileNameLabel": "Name",
+  "profileNameHint": "Enter your full name",
+  "profilePhoneLabel": "Phone Number",
+  "profilePhoneHint": "Enter your phone number",
+  "profileCreatedAt": "Created At",
+  "profileLastLogin": "Last Login",
+  "profileSaveChanges": "Save Changes",
+  "profileUpdateSuccess": "Profile updated successfully",
+  "profilePhotoPickFailed": "Failed to pick image",
+  "changePhotoTooltip": "Change Photo",
+  "searchRoutesHint": "Search routes...",
+  "noSearchRouteMsg": "No routes found matching your search",
+  "noRoutesYetMsg": "Start by creating a new route to begin tracking your trips",
+  "loadingRoutes": "Loading routes...",
+  "backTooltip": "Back",
+  "loadingCheckingMsg": "Checking...",
+  "loadingLocatingMsg": "Locating you...",
+  "loadingStartingTripMsg": "Starting trip...",
+  "loadingCheckContactsMsg": "Checking contacts...",
+  "loadingGeneralMsg": "Loading...",
+  "removeFromFavorites": "Remove from Favorites",
+  "addToFavorites": "Add to Favorites",
+  "archiveRoute": "Archive",
+  "activateRoute": "Activate",
+  "routeWaypointsCount": "Points ({count})",
+  "@routeWaypointsCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "routeActivatedMsg": "Route activated",
+  "routeArchivedMsg": "Route archived",
+  "routeNotFoundError": "Route not found",
+  "statWaypoints": "Waypoints",
+  "statTotalDistance": "Total Distance",
+  "statEstimatedTime": "Estimated Time",
+  "statCheckpoints": "Checkpoints",
+  "statRouteStatus": "Status",
+  "statCreatedAt": "Created At",
+  "statusActive": "Active",
+  "statusInactive": "Inactive",
+  "statusArchived": "Archived",
+  "quickInfoPoints": "pts",
+  "quickInfoRouteLabel": "Route",
+  "mapTypeNormal": "Normal",
+  "mapTypeSatellite": "Satellite",
+  "mapTypeTerrain": "Terrain",
+  "mapTypeHybrid": "Hybrid",
+  "fsInfoPoints": "Points",
+  "fsInfoDistance": "Distance",
+  "fsInfoTime": "Time",
+  "smartAnalyzingMsg": "🤖 Smart analysis in progress...",
+  "routeNameLabel": "Route: {name}",
+  "@routeNameLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "filterTooltip": "Filter",
+  "loadingTripHistory": "Loading history...",
+  "searchTripsHint": "Search trips...",
+  "noResultsLabel": "No results",
+  "tripFilterCount": "{filtered} of {total}",
+  "@tripFilterCount": {
+    "placeholders": {
+      "filtered": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "completedStatusLabel": "Completed",
+  "cancelledStatusLabel": "Cancelled",
+  "durationHoursMinutes": "{h}h {m}m",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "h": {
+        "type": "String"
+      },
+      "m": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHoursOnly": "{h}h",
+  "durationMinutesSeconds": "{m}m {s}s",
+  "@durationMinutesSeconds": {
+    "placeholders": {
+      "m": {
+        "type": "String"
+      },
+      "s": {
+        "type": "String"
+      }
+    }
+  },
+  "durationMinutesOnly": "{m}m",
+  "@durationMinutesOnly": {
+    "placeholders": {
+      "m": {
+        "type": "String"
+      }
+    }
+  },
+  "durationSecondsOnly": "{s}s",
+  "@durationSecondsOnly": {
+    "placeholders": {
+      "s": {
+        "type": "String"
+      }
+    }
+  },
+  "tripStartTime": "Start Time",
+  "tripDuration": "Duration",
+  "tripDistanceCovered": "Distance Covered",
+  "tripAvgSpeed": "Avg Speed",
+  "tripMaxSpeed": "Max Speed",
+  "tripVisitedPoints": "Visited Points",
+  "tripRemainingPoints": "Remaining Points",
+  "tripDeviations": "Deviations",
+  "statsLiveTitle": "Live Statistics",
+  "statsLiveInfoTitle": "Live Info",
+  "statsCurrentSpeed": "Current Speed",
+  "statsElapsedTime": "Elapsed Time",
+  "statsRemainingDistance": "Remaining Distance",
+  "statsRemainingTime": "Remaining Time",
+  "statsDistanceCovered": "Distance Covered",
+  "statsAvgSpeed": "Avg Speed",
+  "statsMaxSpeed": "Max Speed",
+  "statsTrackPoints": "Track Points",
+  "statsVisitedWaypoints": "Visited Waypoints",
+  "statsMissedWaypoints": "Missed Waypoints",
+  "statsTotalDeviations": "Total Deviations",
+  "statsCheckpoints": "Checkpoints",
+  "statsArrived": "Arrived",
+  "speedUnit": "km/h",
+  "distanceKmUnit": "km",
+  "waypointProgressTitle": "Route Points",
+  "waypointCompleted": "{percent}% complete",
+  "@waypointCompleted": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "waypointCheckpointLabel": "Checkpoint",
+  "waypointCurrentLabel": "Current",
+  "waypointMissedLabel": "Missed",
+  "minTwoWaypointsHint": "At least two waypoints required",
+  "saveRoute": "Save Route",
+  "routeCalcSuccess": "Route details calculated successfully",
+  "routeCalcFailed": "Calculation failed. Please try again",
+  "gpsRequired": "GPS Required",
+  "gpsRequiredBody": "GPS must be enabled to determine your location on the map.\n\nPlease enable location services (GPS) from your device settings to continue.",
+  "openSettings": "Open Settings",
+  "waitCurrentOperation": "Please wait for the current operation to finish",
+  "locatingCurrentPosition": "Locating your current position...",
+  "preparingMap": "Preparing map...",
+  "waypointEndCurrentLocation": "End Point (My Location)",
+  "waypointMiddleCurrentLocation": "Waypoint {n} (My Location)",
+  "@waypointMiddleCurrentLocation": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "waypointMiddle": "Waypoint {n}",
+  "@waypointMiddle": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "waypointStart": "Start Point",
+  "waypointEnd": "End Point",
+  "waypointAddedSuccess": "Successfully added {name}",
+  "@waypointAddedSuccess": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "waypointAddedFromMapSuccess": "Successfully added {name} from map",
+  "@waypointAddedFromMapSuccess": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationError": "An error occurred while getting location",
+  "routeNeedsWaypoints": "Please add waypoints to the route first",
+  "routeNeedsTwoWaypoints": "Route must have at least two waypoints (start and end)",
+  "exampleHomeName": "Example: Home",
+  "waypointNameRequiredLabel": "Waypoint Name *",
+  "descriptionLabel": "Description",
+  "latitudeRequiredLabel": "Latitude *",
+  "longitudeRequiredLabel": "Longitude *",
+  "radiusMetersLabel": "Radius (meters)",
+  "deleteTripTitle": "Delete Trip",
+  "deleteTripConfirm": "Are you sure you want to delete this trip from history?",
+  "clearAllTripsTitle": "Clear All History",
+  "clearAllTripsConfirm": "This will permanently delete all {count} trips from history. This action cannot be undone.",
+  "@clearAllTripsConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "clearAllBtn": "Clear All",
+  "tripDeletedSuccess": "Trip deleted successfully",
+  "allTripsCleared": "All trips cleared",
+  "deleteAllTripsTooltip": "Clear all trips",
+  "contactRequiredTitle": "Add Contact Required",
+  "contactRequiredBody": "To start a trip, you must add at least one contact.",
+  "contactRequiredHint": "Contacts will be notified in case of emergency or route deviation.",
+  "noTripHistory": "No trips yet. Start your first trip!",
+  "waypointInvalidCoords": "One waypoint has invalid coordinates (0,0), please update it",
+  "waypointsSameLocation": "Start and end points are at the same location, please change one of them",
+  "locationFarBody": "You are {distanceM}m ({distanceKm}km) from the saved start point",
+  "@locationFarBody": {"placeholders": {"distanceM": {"type": "String"}, "distanceKm": {"type": "String"}}},
+  "routeLabel": "Route: {name}",
+  "@routeLabel": {"placeholders": {"name": {"type": "String"}}},
+  "activeTripTitle": "Active Trip",
+  "activeTripBody": "You have an active trip.\n\nWould you like to continue the active trip or end it and start a new one?"
+}

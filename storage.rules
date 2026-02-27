@@ -1,0 +1,69 @@
+rules_version = '2';
+
+// Firebase Storage Security Rules for PSGA App
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // دالة مساعدة للتحقق من المصادقة
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // دالة مساعدة للتحقق من ملكية الملف
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // دالة مساعدة للتحقق من نوع الملف (صور فقط)
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    // دالة مساعدة للتحقق من حجم الملف (أقل من 5 ميجا)
+    function isValidSize() {
+      return request.resource.size < 5 * 1024 * 1024;
+    }
+    
+    // ===== Profile Images =====
+    // مسار: profile_images/{userId}/{imageId}
+    match /profile_images/{userId}/{imageId} {
+      // القراءة: متاحة للجميع المصادقين
+      allow read: if isAuthenticated();
+      
+      // الكتابة: متاحة فقط لمالك الملف الشخصي
+      // - يجب أن يكون الملف صورة
+      // - يجب أن يكون حجم الملف أقل من 5 ميجا
+      allow write: if isOwner(userId) 
+                   && isImage() 
+                   && isValidSize();
+      
+      // الحذف: متاح فقط لمالك الملف
+      allow delete: if isOwner(userId);
+    }
+    
+    // ===== Trip Photos (اختياري للمستقبل) =====
+    // مسار: trip_photos/{userId}/{tripId}/{photoId}
+    match /trip_photos/{userId}/{tripId}/{photoId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) 
+                   && isImage() 
+                   && isValidSize();
+      allow delete: if isOwner(userId);
+    }
+    
+    // ===== Alert Evidence (اختياري للمستقبل) =====
+    // مسار: alert_evidence/{userId}/{alertId}/{evidenceId}
+    match /alert_evidence/{userId}/{alertId}/{evidenceId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) 
+                   && isImage() 
+                   && isValidSize();
+      allow delete: if isOwner(userId);
+    }
+    
+    // رفض الوصول إلى أي مسارات أخرى
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

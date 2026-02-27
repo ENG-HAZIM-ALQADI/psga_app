@@ -1,0 +1,14 @@
+{
+  "name": "psga-firestore-rules-tests",
+  "version": "1.0.0",
+  "description": "Firestore Security Rules Tests for PSGA App",
+  "scripts": {
+    "test": "firebase emulators:exec 'npx mocha test_rules.js'",
+    "test:watch": "firebase emulators:exec 'npx mocha test_rules.js --watch'"
+  },
+  "devDependencies": {
+    "@firebase/testing": "^0.20.11",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
