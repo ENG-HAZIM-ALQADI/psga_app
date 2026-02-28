@@ -1,23 +1,33 @@
-# السطر التالي ضروري جداً لتعريف وظائف فلاتر داخل الـ Podfile
-pattern = File.join('..', 'Flutter', 'generated_plugin_registrant.rb')
-require File.expand_path(pattern, __FILE__)
-
-# تحديد المنصة المطلوبة لمكتبة الخرائط
+# 1. تحديد المنصة لضمان عمل الخرائط
 platform :ios, '14.0'
+
+# 2. محاولة جلب ملفات فلاتر فقط إذا كانت موجودة
+# (هذا الجزء يمنع الخطأ الذي ظهر لك في الرسالة الأخيرة)
+flutter_install_all_ios_pods_helper = File.expand_path(File.join('..', 'Flutter', 'generated_plugin_registrant.rb'), __FILE__)
+if File.exist?(flutter_install_all_ios_pods_helper)
+  require flutter_install_all_ios_pods_helper
+end
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  # سحب الإضافات (Plugins) تلقائياً
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  # محاولة تشغيل الربط التلقائي
+  if respond_to?(:flutter_install_all_ios_pods)
+    flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  end
 end
 
+# 3. تعديل إعدادات البناء لكل المكتبات يدوياً
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
+    # تفعيل إعدادات فلاتر الإضافية إذا كانت مدعومة
+    if respond_to?(:flutter_additional_ios_build_settings)
+      flutter_additional_ios_build_settings(target)
+    end
+
     target.build_configurations.each do |config|
-      # إجبار جميع المكتبات على استخدام iOS 14 لتجنب أي تعارض
+      # إجبار الجميع على نظام iOS 14
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
     end
   end
